@@ -84,8 +84,7 @@ end
 
 local originalCamera = workspace.CurrentCamera
 
-
-
+-- main function to load
 function load(onLoadFinish)
 	mainFrame.Visible = true
 	mainFrame.Position = UDim2.new(0,0,0,0)
@@ -98,10 +97,7 @@ function load(onLoadFinish)
 		text.Text = 100 - string.format("%.0f", yScale * 100)
 	end
 
-
 	local viewport = mainFrame.Disc
-
-
 
 	local function cloneAppearance(character, viewport)
 		local cloneModel = Instance.new("Model")
@@ -154,11 +150,7 @@ function load(onLoadFinish)
 
 		return cloneModel
 	end
-
-
-
-
-
+	
 	for _, obj in pairs(workspace:GetChildren()) do
 		if obj:IsA("Terrain") then
 			-- do nothing (no need to add anything here)
@@ -178,10 +170,8 @@ function load(onLoadFinish)
 	local camera = workspace.CurrentCamera:Clone()
 	camera.Parent = viewport
 
-
 	mainFrame.Disc.CurrentCamera = mainFrame.Disc:FindFirstChild('Camera')
 	createSkyboxParts(mainFrame.Disc, mainFrame.Disc.CurrentCamera)
-
 
 	mainFrame.Disc.CurrentCamera = mainFrame.Disc:FindFirstChild("Camera")
 	mainFrame.Disc.Position= UDim2.new(.3,0,.5,0)
@@ -242,4 +232,3 @@ workspace.ClickPart.ClickDetector.MouseClick:Connect(function(player)
 		end
 	)
 end)
-
