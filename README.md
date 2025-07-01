@@ -5,7 +5,8 @@ Note: I'm not the best UI designer, although the UI is the main selling point of
 
 This is a decent recreation of the loading screen from PaRappa the Rapper 2, and I thought it would be the first test of my coding skills.
 
-Total Experience (at time of wrtiting script): 12 months\n
+Total Experience (at time of wrtiting script): 12 months
+
 Time taken to write whole code: 90 minutes
 
 Smaller details excluded as they would add unnecessary padding to the code itself
