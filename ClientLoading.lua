@@ -182,18 +182,23 @@ function load(onLoadFinish)
 	createSkyboxParts(mainFrame.Disc, mainFrame.Disc.CurrentCamera)
 	-- the reason i placed it here (beginning) is because it would get a bit weird to put it at the end as it does it after the final tween
 	onLoadFinish()
+	
+	local uiCorner = Instance.new("UICorner")
+	uiCorner.CornerRadius = UDim.new(0.5, 0)
+	uiCorner.Parent = viewport
+
 
 	-- place disc on turntable animation
 	mainFrame.Disc.CurrentCamera = mainFrame.Disc:FindFirstChild("Camera")
-	mainFrame.Disc.Position= UDim2.new(.3,0,.5,0)
+	mainFrame.Disc.Position = UDim2.new(.3,0,.5,0)
 	mainFrame.Disc.Size = UDim2.new(.8,0,.8,0)
 	tweenService:Create(mainFrame.Disc, TweenInfo.new(1, Enum.EasingStyle.Bounce, Enum.EasingDirection.Out), {Size = UDim2.new(.25,0,.25,0), Position = UDim2.new(.225,0,.5,0)}):Play()
 	mainFrame.DiamondTip.ZIndex = 5
 	task.wait(1.2)
+	
 
 	-- actually spins the disc
 	tweenService:Create(mainFrame.Disc, TweenInfo.new(12, Enum.EasingStyle.Linear), {Rotation = mainFrame.Disc.Rotation + (360 * 60)}):Play()
-
 	-- all animation loops
 	for i=0, 9, 1 do
 		if i % 5 == 0 then
